@@ -10,7 +10,7 @@ variable "instance_type" {
 
 variable "instance_ami" {
   type    = string
-  default = "ami-0150189e4c09ffab5"
+  default = "ami-0d114020bf27f27cf"
   description = "AMI ID for the EC2 instance"
 }
 
@@ -22,4 +22,23 @@ variable "key_name" {
 variable "allowed_ssh_cidr" {
   type    = list(string)
    description = "CIDR block allowed to access SSH - MY IP ONLY (22)"
+}
+
+variable "db_name" {
+  type        = string
+  default     = "wordpress"
+}
+
+variable "db_user" {
+  type        = string
+  default     = "admin"
+}
+
+variable "db_password" {
+  type        = string
+  sensitive   = true
+}
+
+variable "db_host" {
+  type        = string
 }
