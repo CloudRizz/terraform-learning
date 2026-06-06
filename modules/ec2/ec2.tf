@@ -1,5 +1,5 @@
 resource "aws_instance" "this" {
-  ami                     = local.instance_ami # Variable reference to the AMI ID defined in variables.tf
+  ami                     = var.ami # Variable reference to the AMI ID defined in variables.tf
   instance_type           = var.instance_type # Variable reference to the instance type defined in variables.tf
 
   # Add in other configuration options as needed
@@ -7,13 +7,11 @@ resource "aws_instance" "this" {
   # Other options may be optional, such as user_data, monitoring, etc.
 }
 
-resource "aws_instance" "import" {
-  ami                     = local.instance_ami 
-  instance_type           = var.instance_type
-  availability_zone       = "eu-west-2a"
+# resource "aws_instance" "import" {
+#   ami                     = local.instance_ami
+#   instance_type           = var.instance_type
+#   availability_zone       = "eu-west-2a"
 
-  tags = {
-    Name = "terraform-instance"
-  }
-
-}
+#   tags = {
+#     Name = "terraform-instance"
+#   }

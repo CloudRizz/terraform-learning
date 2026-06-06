@@ -1,5 +1,7 @@
 module "ec2" {
-    source = "../../modules/ec2"
+  source = "../../modules/ec2"
+  ami   = var.ami
+  instance_type = var.instance_type
 }
 
 # This is the main Terraform configuration file that defines the resources and modules to be created.

@@ -1,7 +1,12 @@
 # Input Variable
 variable "instance_type" {
-    type = string
-    default = "t3.micro"
+  type    = string
+  default = "t3.micro"
+}
+
+variable "ami" {
+  type    = string
+  default = "ami-0150189e4c09ffab5"
 }
 # Above is an example of input variables in Terraform. 
 # Input variables allow us to parameterize our Terraform configurations, making 
@@ -11,7 +16,7 @@ variable "instance_type" {
 
 # Local Variables
 locals {
-    instance_ami = "ami-0150189e4c09ffab5"
+  instance_ami = "ami-0150189e4c09ffab5"
 }
 
 # Local variables are used to define values that are computed from other values in the configuration.
@@ -20,8 +25,8 @@ locals {
 
 # Output Variable
 output "instance_id" {
-    description = "The ID of the created EC2 instance"
-    value = aws_instance.this.id
+  description = "The ID of the created EC2 instance"
+  value       = module.ec2.instance_id
 }
 
 # Output variables allow us to extract and display information about the resources created by Terraform.
