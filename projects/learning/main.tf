@@ -1,5 +1,5 @@
 module "ec2" {
-    source = "./modules/ec2"
+    source = "../../modules/ec2"
 }
 
 # This is the main Terraform configuration file that defines the resources and modules to be created.
