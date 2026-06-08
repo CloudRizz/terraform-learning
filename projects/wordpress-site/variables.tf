@@ -41,4 +41,5 @@ variable "db_password" {
 
 variable "db_host" {
   type        = string
+  default     = "your-rds-endpoint.rds.amazonaws.com"
 }
